@@ -14,6 +14,10 @@ node {
         
     }
     stage("Send Email"){
-        mail bcc: '', body: 'hi your ami created', cc: '', from: '', replyTo: '', subject: 'golden ami created !{AMI_REGION} Thanks', to: 'anyemail2020@yahoo.com'
+        mail bcc: '', 
+        body: "hi your ami created IN ${AMI_REGION} ", 
+        cc: '', from: '', replyTo: '', 
+        subject: "${TOOL_TO_PROVISION}created Thanks", 
+        to: 'anyemail2020@yahoo.com'
     }
 }
