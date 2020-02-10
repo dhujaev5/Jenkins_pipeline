@@ -1,5 +1,5 @@
 node {
-    properties([parameters([choice(choices: ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2'], description: 'Please select a region', name: 'AMI_REGION')])])
+    properties([parameters([choice(choices: ['golden_ami', 'tower', 'elk', 'nagiosxi', 'gitlab', 'ne'], description: 'What tool would you like to build', name: 'TOOL_TO_PROVISION'), choice(choices: ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2'], description: 'Please choose a region', name: 'AMI_REGION')])])
 
     stage("Pull Repo"){
         git 'https://github.com/farrukh90/packer.git'
@@ -14,7 +14,6 @@ node {
         
     }
     stage("Send Email"){
-        mail bcc: '', body: 'hi your ami created', cc: '', 
-        from: '', replyTo: '', subject: 'golden ami created', to: 'anyemail2020@yahoo.com'
+        mail bcc: '', body: 'hi your ami created', cc: '', from: '', replyTo: '', subject: 'golden ami created', to: 'anyemail2020@yahoo.com'
     }
 }
