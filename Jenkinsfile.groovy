@@ -10,10 +10,10 @@ node {
         
     }
     stage("Send Notification to Slack"){
-     //   slackSend channel: 'nagios_alerts', message: 'Golden AMI has been built'
+     //   slackSend channel: 'nagios_alerts', message: "${TOOL_TO_PROVISION} has been built"
         
     }
     stage("Send Email"){
-        mail bcc: '', body: 'hi your ami created', cc: '', from: '', replyTo: '', subject: 'golden ami created', to: 'anyemail2020@yahoo.com'
+        mail bcc: '', body: 'hi your ami created', cc: '', from: '', replyTo: '', subject: 'golden ami created !{AMI_REGION} Thanks', to: 'anyemail2020@yahoo.com'
     }
 }
