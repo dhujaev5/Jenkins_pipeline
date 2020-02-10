@@ -14,6 +14,7 @@ node {
         
     }
     stage("Send Email"){
-        echo "Hello"
+        mail bcc: '', body: 'hi your ami created', cc: '', 
+        from: '', replyTo: '', subject: 'golden ami created', to: 'anyemail2020@yahoo.com'
     }
 }
