@@ -6,7 +6,7 @@ node {
     }
     stage("Build Image"){
         sh "packer version"
-        sh "packer build -var region="us-east-1" tools/jenkins_examplee.json"
+        sh "packer build -var region=${AMI_REGION} tools/jenkins_examplee.json"
         
     }
     stage("Send Notification to Slack"){
