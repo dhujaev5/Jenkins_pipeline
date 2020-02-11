@@ -11,7 +11,8 @@ node {
                 'nexus'
                 'vault'
                 'artemisv1'], 
-                description: 'What tool would you like to build', name: 'TOOL_TO_PROVISION'), 
+                description: 'What tool would you like to build', 
+                name: 'TOOL_TO_PROVISION'), 
                 choice(choices: [
                     'us-east-1', 
                     'us-east-2', 
